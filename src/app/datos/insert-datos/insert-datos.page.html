@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="enviarFormulario()">
+    <ion-item>
+      <ion-label>Ingresa el nombre:</ion-label>
+      <ion-input type="text" placeholder="Digite el nombre" formControlNmae="datNombre" requiered></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label>Ingresa el apellido:</ion-label>
+      <ion-input type="text" placeholder="Digite el apellido" formControlNmae="datApellido" requiered></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label>Ingresa la edad:</ion-label>
+      <ion-input type="number" placeholder="Digite la edad" formControlNmae="datEdad" requiered></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label>Ingresa el deporte:</ion-label>
+      <ion-input type="text" placeholder="Digite el deporte" formControlNmae="datDeporte" requiered></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label>Ingresa la url de la imagen:</ion-label>
+      <ion-input type="text" placeholder="Digite la url" formControlNmae="datImagen" requiered></ion-input>
+    </ion-item>
+    <ion-button type="summit" [disabled]="form.invalid">
+      <ion-icon name="save-outline"></ion-icon>
+    </ion-button>
+  </form>
+</ion-content>

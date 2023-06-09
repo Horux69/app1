@@ -1,10 +1,3 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -14,7 +7,19 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-avatar id="avatar">
+      <img src="../../assets/img/hombre.png" alt="">
+    </ion-avatar>
+    <div class="titulo">
+    <strong><h1 id="nombre">Mi Primera APP</h1></strong>
   </div>
-</ion-content>
+    <ion-item>
+      <ion-label position="floating">
+        Digite nombre:
+      </ion-label>
+      <ion-input [(ngModel)]="myName" id="myinput">
+
+      </ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="enviar()" id="button">Sumit</ion-button>
+

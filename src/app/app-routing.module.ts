@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'datos/:user',
+    loadChildren: () => import('./datos/datos.module').then( m => m.DatosPageModule)
+  },
+  {
+    path: 'crossfit',
+    loadChildren: () => import('./crossfit/crossfit.module').then( m => m.CrossfitPageModule)
+  },
 ];
 
 @NgModule({

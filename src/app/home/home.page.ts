@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+import { DatosPage } from '../datos/datos.page';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +9,22 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
-
+  myName: string = ''
+  constructor(private toastController: ToastController,
+              private router: Router) {}
+  enviar() {
+    if(this.myName.length > 0){
+      this.router.navigate(['../datos',this.myName])
+    }
+    else{
+      this.presentToast()
+    }
+    }
+    async presentToast() {
+      const toast = await this.toastController.create({
+        message: 'Debe digitar el nombre',
+        duration: 2000
+      });
+      toast.present();
+    }
 }
