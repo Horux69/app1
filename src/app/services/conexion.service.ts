@@ -16,9 +16,9 @@ export class ConexionService {
     .get(this.url+"/consultaDatos")
   }
 
-  insertarDatos(datos:any){
+  addDatos(data:any){
     return this.http
-    .post(this.url+"/insertarDatos", JSON.stringify(datos))
+    .post(this.url+"/createDatos",JSON.stringify(data))
   }
 
 }

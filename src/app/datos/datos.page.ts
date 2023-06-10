@@ -12,7 +12,7 @@ import { InsertDatosPage } from './insert-datos/insert-datos.page';
 })
 export class DatosPage implements OnInit {
   myName: string | null = ''
-  datos!: Datos[] //Inicializamos una variable datos tipo any, que llama la clase datos y inicializa un arreglo vacio
+  datos!: Datos[]//Inicializamos una variable datos tipo any, que llama la clase datos y inicializa un arreglo vacio
 
   //datos: Array<any> = []
   constructor(private activateRoute: ActivatedRoute,
@@ -33,6 +33,7 @@ export class DatosPage implements OnInit {
       }
     )
   }
+  
 
   insert(){
     this.modalCtrl.create({
