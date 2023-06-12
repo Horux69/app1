@@ -1,25 +1,30 @@
+<ion-content>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <ion-avatar id="avatar">
+    <!-- <ion-avatar id="avatar">
       <img src="../../assets/img/hombre.png" alt="">
-    </ion-avatar>
+    </ion-avatar> -->
+    <div class="container-form">
+      <div class="content-form">
     <div class="titulo">
-    <strong><h1 id="nombre">Mi Primera APP</h1></strong>
+    <strong>LOGIN</strong>
   </div>
+
+  <div class="classInput">
+    <ion-label>Digite el nombre:</ion-label>
     <ion-item>
-      <ion-label position="floating">
-        Digite nombre:
-      </ion-label>
-      <ion-input [(ngModel)]="myName" id="myinput">
+      
+      <ion-input [(ngModel)]="myName" (ionFocus)="onInputFocus()" id="myinput">
 
       </ion-input>
     </ion-item>
-    <ion-button expand="full" (click)="enviar()" id="button">Sumit</ion-button>
+  </div>
+  <div class="boton">
+    <ion-button (click)="enviar()" id="button">Sumit</ion-button>
+  </div>
+  </div>
+  </div>
 
+
+
+</ion-content>

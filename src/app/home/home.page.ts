@@ -27,4 +27,14 @@ export class HomePage {
       });
       toast.present();
     }
+
+    isInputClicked: boolean = false;
+
+  onInputFocus() {
+    this.isInputClicked = true;
+  }
+
+  onInputBlur() {
+    this.isInputClicked = false;
+  }
 }
