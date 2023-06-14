@@ -108,7 +108,7 @@ export class InsertDatosPage implements OnInit {
               this.conexion.addDatos(this.datos).subscribe(
                 (data) => {
                   this.presentToast('Usuario Creado', 'El usuario fue creado con éxito');
-                  this.form.reset();
+                  this.modalCtrl.dismiss(null, 'close')
                 },
                 (error) => {
                   this.presentToast('Error', 'Ocurrió un error al crear los datos');

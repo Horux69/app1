@@ -11,14 +11,13 @@
 <ion-content>
   <div class="title-content">
   <h3 id="title">Bienvenido <strong>{{myName}}</strong> </h3>
-    <img src="../../assets/img/hombre.png" alt="">
   </div>
 
   <ion-card id="card" *ngFor="let myDatos of datos; let i = index">
     <ion-card-content id="content">
       <ion-accordion-group>
         <ion-accordion value="firts">
-          <ion-item slot="header">
+          <ion-item class="headerAco" slot="header">
             <ion-label><strong>{{myDatos.datDeporte}}</strong></ion-label>
           </ion-item>
           <div class="ion-padding" slot="content">

@@ -5,15 +5,23 @@
     font-family: 'Poppins', sans-serif;
 }
 
+ion-content {
+    --background: url(..//..//assets/img/wave-haikei.svg);
+}
+
+ion-toolbar {
+    --background: #456286;
+    color: white;
+  }
+
 #title {
     text-align: center;
     font-family: 'Poppins', sans-serif;
-
 }
 
 #card {
-    border-radius: 15px;
-    box-shadow: 1px 1px 5px black;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.666);
 }
 
 img {
