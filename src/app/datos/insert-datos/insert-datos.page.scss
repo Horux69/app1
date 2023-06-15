@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&display=swap');
+
+* {
+    font-family: 'Outfit', sans-serif;
+  }
+
+ion-content {
+    --background: url(..//..//..//assets/img/wave-haikei.svg);
+}
+
+.my-custom-label {
+    font-family: 'Outfit', sans-serif;
+    /* Agrega más estilos personalizados aquí */
+  }
+
+  ion-icon {
+    padding-left: 10px;
+  }
+  
+
+ion-button {
+    --background: #45556865;
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+  
+  }
+
+  .container-form {
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  }
+
+.content-form {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.17);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2.7px);
+        -webkit-backdrop-filter: blur(2.7px);
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        padding: 45px;
+}
+
+ion-item {
+    --background: rgba(255, 255, 255, 0.43);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.3px);
+    -webkit-backdrop-filter: blur(6.3px);
+    margin-bottom: 25px;
+    color: white;
+    }

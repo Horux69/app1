@@ -5,29 +5,36 @@
 </ion-header>
 
 <ion-content>
+  <div class="container-form">
+    <div class="content-form">
+
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="classInput">
     <ion-item>
-      <ion-label>Ingresa el nombre:</ion-label>
+      <ion-label class="my-custom-label">Ingresa el nombre:</ion-label>
       <ion-input type="text" placeholder="Digite el nombre" formControlName="datNombre" requiered></ion-input>
     </ion-item>
     <ion-item>
-    <ion-label>Ingresa el apellido:</ion-label>
+    <ion-label class="my-custom-label">Ingresa el apellido:</ion-label>
       <ion-input type="text" placeholder="Digite el apellido" formControlName="datApellido" requiered></ion-input>
     </ion-item>
     <ion-item>
-    <ion-label>Ingresa la edad:</ion-label>
+    <ion-label class="my-custom-label">Ingresa la edad:</ion-label>
       <ion-input type="number" placeholder="Digite la edad" formControlName="datEdad" requiered></ion-input>
     </ion-item>
     <ion-item>
-    <ion-label>Ingresa el deporte:</ion-label>
+    <ion-label class="my-custom-label">Ingresa el deporte:</ion-label>
       <ion-input type="text" placeholder="Digite el deporte" formControlName="datDeporte" requiered></ion-input>
     </ion-item>
     <ion-item>
-    <ion-label>Ingresa la url de la imagen:</ion-label>
+    <ion-label class="my-custom-label">Ingresa la url de la imagen:</ion-label>
       <ion-input type="text" placeholder="Digite la url" formControlName="datImagen" requiered></ion-input>
     </ion-item>
+    </div>
     <ion-button type="summit" [disabled]="form.invalid">
-      <ion-icon name="save-outline"></ion-icon>
+      Agregar<ion-icon name="save-outline"></ion-icon>
     </ion-button>
   </form>
+</div>
+</div>
 </ion-content>
