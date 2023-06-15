@@ -78,4 +78,14 @@ export class DatosPage implements OnInit {
       this.router.navigate(['../crossfit'])
     }
   }
+
+  doRefresh(event:any){
+    this.datos = []
+    this.conexion.consultaDatos().subscribe(
+      response => {
+        this.datos = response
+        event.target.complete()
+      }
+    )
+  }
 }
