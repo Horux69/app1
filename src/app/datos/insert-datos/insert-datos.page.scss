@@ -9,6 +9,11 @@ ion-content {
     --background: url(..//..//..//assets/img/wave-haikei.svg);
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 .my-custom-label {
     font-family: 'Outfit', sans-serif;
     /* Agrega más estilos personalizados aquí */

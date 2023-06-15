@@ -75,6 +75,7 @@ import { ConexionService } from 'src/app/services/conexion.service';
 export class InsertDatosPage implements OnInit {
 
   datos: any
+  
   constructor(private http: HttpClient,
         private formBuilder: FormBuilder,
         private conexion: ConexionService,
@@ -117,6 +118,10 @@ export class InsertDatosPage implements OnInit {
             } else {
               this.presentToast('Error', 'Por favor, complete el formulario correctamente');
             }
+          }
+
+          cerrarModal() {
+            this.modalCtrl.dismiss();
           }
 
           
