@@ -84,11 +84,11 @@ export class InsertDatosPage implements OnInit {
       ) { }
 
   form = new FormGroup({
-    datNombre: new FormControl('',[Validators.minLength(3)]),
-    datApellido: new FormControl('',[Validators.minLength(5)]),
+    datNombre: new FormControl('',[Validators.required]),
+    datApellido: new FormControl('',[Validators.required]),
     datEdad: new FormControl('',),
-    datDeporte: new FormControl('',[Validators.minLength(8)]),
-    datImagen: new FormControl('',[Validators.minLength(5)])
+    datDeporte: new FormControl('',[Validators.required]),
+    datImagen: new FormControl('',[Validators.required])
   })
 
   async presentToast(header: string, message: string) {
@@ -109,7 +109,7 @@ export class InsertDatosPage implements OnInit {
               this.conexion.addDatos(this.datos).subscribe(
                 (data) => {
                   this.presentToast('Usuario Creado', 'El usuario fue creado con éxito');
-                  this.modalCtrl.dismiss(null, 'close')
+                  this.form.reset()
                 },
                 (error) => {
                   this.presentToast('Error', 'Ocurrió un error al crear los datos');
