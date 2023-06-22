@@ -1,12 +1,13 @@
 export class Datos{
-    datNombre: String
-    datApellido: String
+    datId: any
+    datNombre: string
+    datApellido: string
     datEdad: any
-    datDeporte: String
-    datImagen: String
+    datDeporte: string
+    datImagen: string
 
-    constructor(datNombre: String, datApellido: String, datEdad: any, datDeporte: String, datImagen: String){
-
+    constructor(datId:any, datNombre: string, datApellido: string, datEdad: any, datDeporte: string, datImagen: string){
+        this.datId = datId
         this.datNombre = datNombre
         this.datApellido = datApellido
         this.datEdad = datEdad

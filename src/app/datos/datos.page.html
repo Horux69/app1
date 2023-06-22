@@ -24,6 +24,8 @@
         <ion-accordion value="firts">
           <ion-item class="headerAco" slot="header">
             <ion-label><strong>{{myDatos.datDeporte}}</strong></ion-label>
+            <ion-icon (click)="updateDatos(myDatos)" color="success" slot="end" name="create-outline"></ion-icon>
+            <ion-icon (click)="removeDatos(myDatos.datId)" color="danger" slot="end" name="trash-outline"></ion-icon>
           </ion-item>
           <div class="ion-padding" slot="content">
             <div *ngIf="myDatos.datEdad >= 18; else menor">

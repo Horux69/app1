@@ -34,7 +34,7 @@
 
     <div class="buttons">
     <ion-button type="summit" [disabled]="form.invalid">
-      Agregar<ion-icon name="save-outline"></ion-icon>
+      {{isUpdate ? 'Modificar' : 'Crear'}}<ion-icon name="save-outline"></ion-icon>
     </ion-button>
     <ion-button (click)="cerrarModal()">Cerrar</ion-button>
     </div>

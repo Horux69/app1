@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Datos } from './models/datos' //Importamos la clase datos creada en datos.ts
 import { ConexionService } from '../services/conexion.service';
-import { ModalController } from '@ionic/angular';
+import { AlertController, ModalController, ToastController } from '@ionic/angular';
 import { InsertDatosPage } from './insert-datos/insert-datos.page';
 
 @Component({
@@ -18,7 +18,9 @@ export class DatosPage implements OnInit {
   constructor(private activateRoute: ActivatedRoute,
               private router: Router, 
               private conexion: ConexionService, //Llamamos conexion
-              private modalCtrl: ModalController) { }
+              private modalCtrl: ModalController,
+              private alertController: AlertController,
+              private toastController: ToastController) { }
 
   ngOnInit() {
     this.myName = this.activateRoute.snapshot.paramMap.get('user')
@@ -33,11 +35,23 @@ export class DatosPage implements OnInit {
       }
     )
   }
+
+
   
 
   insert(){
     this.modalCtrl.create({
       component: InsertDatosPage
+    })
+    .then((modal) => {
+      modal.present()
+      return modal.onDidDismiss
+    })
+  }
+
+  updateDatos(datos:Datos){
+    this.modalCtrl.create({
+      component: InsertDatosPage, componentProps: {datos}
     })
     .then((modal) => {
       modal.present()
@@ -87,5 +101,42 @@ export class DatosPage implements OnInit {
         event.target.complete()
       }
     )
+  }
+
+  removeDatos(datId:any){
+    let remove: any = {}
+    remove["datId"] = datId
+
+    this.alertController.create({
+      header: 'Eliminar',
+      message: '¿Esta seguro que desea eliminar?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          handler: () => {
+
+          }
+        },
+        {
+          text: 'Eliminar',
+          handler: () => {
+            this.conexion.removeDatos(remove).subscribe(
+              data => {
+                this.presentToast("El usuario fue eliminado con exito")
+              }
+              )
+          }
+        }
+      ]
+    })
+    .then((alertEl) => alertEl.present())
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000,
+    });
+    toast.present();
   }
 }
