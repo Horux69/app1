@@ -140,7 +140,7 @@ export class InsertDatosPage implements OnInit {
                 this.conexion.updateDatos(dat).subscribe(
                   (data) => {
                     this.presentToast('Usuario modificado', 'El usuario fue modificado con éxito');
-                    this.form.reset()
+                    this.modalCtrl.dismiss();
                   },
                   (error) => {
                     this.presentToast('Error', 'Ocurrió un error al modificar los datos');

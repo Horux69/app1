@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
 * {
     font-family: 'Poppins', sans-serif;
@@ -20,13 +21,13 @@ h1 {
 }
 
 ion-toolbar {
-    --background: #456286;
+    --background: #000736;
     color: white;
   }
 
 #title {
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
     color: white;
 }
 
