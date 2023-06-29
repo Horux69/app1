@@ -15,10 +15,10 @@
   </ion-refresher>
   
   <div class="title-content">
-  <h3 id="title">Bienvenido <strong>{{myName}}</strong> </h3>
+  <h3 id="title">Bienvenido <strong id="name">{{myName}}</strong> </h3>
   </div>
 
-  <ion-card id="card" *ngFor="let myDatos of datos; let i = index">
+  <!-- <ion-card id="card" *ngFor="let myDatos of datos; let i = index">
     <ion-card-content id="content">
       <ion-accordion-group>
         <ion-accordion value="firts">
@@ -39,20 +39,46 @@
         </ion-accordion>
       </ion-accordion-group>
     </ion-card-content>
+  </ion-card> -->
+  
+  <h1><strong>Participantes de distintos deportes</strong></h1>
+  <ion-card id="card" *ngFor="let myDatos of datos; let i = index">
+    <img (click)="interface(i)" src="{{myDatos.datImagen}}" alt="">
+    <ion-card-header>
+      <ion-card-title><strong>{{myDatos.datDeporte}}</strong></ion-card-title>
+      <ion-card-subtitle>Deporte de alto rendimiento</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content id="content">
+      <div class="ion-padding" slot="content">
+        <div *ngIf="myDatos.datEdad >= 18; else menor">
+        <ion-label><strong>Nombre:</strong> {{myDatos.datNombre}} {{myDatos.datApellido}} <br><strong>Edad: </strong>{{myDatos.datEdad}} <br><strong>Deporte: </strong>{{myDatos.datDeporte}}</ion-label>
+        <div class="parrafo">
+          <strong>Descripcion: </strong>{{myDatos.datDescripcion}}
+        </div>
+      </div>
+      </div>
+      <ng-template #menor>
+        <h3><strong>No se puede mostrar informacion (Menor de edad)</strong></h3>
+      </ng-template>
+      <ion-item class="headerAco" slot="header">
+        <ion-icon (click)="updateDatos(myDatos)" color="success" slot="end" name="create-outline"></ion-icon>
+        <ion-icon (click)="removeDatos(myDatos.datId)" color="danger" slot="end" name="trash-outline"></ion-icon>
+      </ion-item>
+    </ion-card-content>
   </ion-card>
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <ion-button (click)="insert()" size="small" slot="fixed"><strong>Inscribir participantes</strong></ion-button>
+
+  <!-- <ion-fab slot="fixed" vertical="bottom" horizontal="start">
     <ion-fab-button>
-      <ion-icon name="chevron-up-circle"></ion-icon>
+      <ion-icon name="chevron-forward-circle"></ion-icon>
     </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button>
-        <ion-icon name="create-outline"></ion-icon>
-      </ion-fab-button>
+    <ion-fab-list side="end">
       <ion-fab-button (click)="insert()">
         <ion-icon name="save-outline"></ion-icon>
       </ion-fab-button>
     </ion-fab-list>
-  </ion-fab>
+  </ion-fab> -->
 
 </ion-content>

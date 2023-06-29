@@ -30,13 +30,17 @@
     <ion-label class="my-custom-label">Ingresa la url de la imagen:</ion-label>
       <ion-input type="text" placeholder="Digite la url" formControlName="datImagen" requiered></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-label class="my-custom-label">Ingresa la descripcion:</ion-label>
+        <ion-input type="text" placeholder="Digite la descripcion" formControlName="datDescripcion" requiered></ion-input>
+      </ion-item>
     </div>
 
     <div class="buttons">
     <ion-button type="summit" [disabled]="form.invalid">
       {{isUpdate ? 'Modificar' : 'Crear'}}<ion-icon name="save-outline"></ion-icon>
     </ion-button>
-    <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+    <ion-button (click)="cerrarModal()">Cerrar<ion-icon name="close-outline"></ion-icon></ion-button>
     </div>
   </form>
 </div>

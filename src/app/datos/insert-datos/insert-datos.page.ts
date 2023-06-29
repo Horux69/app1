@@ -91,7 +91,8 @@ export class InsertDatosPage implements OnInit {
     datApellido: new FormControl('',[Validators.required]),
     datEdad: new FormControl('',),
     datDeporte: new FormControl('',[Validators.required]),
-    datImagen: new FormControl('',[Validators.required])
+    datImagen: new FormControl('',[Validators.required]),
+    datDescripcion: new FormControl('',[Validators.required])
   })
 
   async presentToast(header: string, message: string) {
@@ -114,6 +115,7 @@ export class InsertDatosPage implements OnInit {
               datEdad: this.datos.datEdad,
               datDeporte: this.datos.datDeporte,
               datImagen: this.datos.datImagen,
+              datDescripcion: this.datos.datDescripcion
             }
           )
         }
@@ -131,6 +133,7 @@ export class InsertDatosPage implements OnInit {
                 datEdad: this.form.value.datEdad!,
                 datDeporte: this.form.value.datDeporte!,
                 datImagen: this.form.value.datImagen!,
+                datDescripcion: this.form.value.datDescripcion!
                }
   /*               this.datos = dat
                 this.datos.datId = 0 */
